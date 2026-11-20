@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>하원그로브 | 제주 한라봉 · 카라향</title>
+<meta name="description" content="제주 서귀포 하원동, 한라산 자락에서 키운 한라봉과 카라향. 팜지오가 운영합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#707070;--org:#cf6a0a;--ink:#fff;--line:#ececec;--soft:#faf6ee;--hero:#d9730d;--leaf:#7d9340;color-scheme:light;box-sizing:border-box}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141414;--fg:#f2f2f2;--mute:#a0a0a0;--org:#f2a03d;--ink:#1e1304;--line:#2a2a2a;--soft:#1c1b18;--hero:#7a3f06;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141414;--fg:#f2f2f2;--mute:#a0a0a0;--org:#f2a03d;--ink:#1e1304;--line:#2a2a2a;--soft:#1c1b18;--hero:#7a3f06;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--fg);font:300 16px/1.8 "Noto Sans KR",system-ui,-apple-system,sans-serif;word-break:keep-all;padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+h1,h2,h3{font-weight:500;line-height:1.35;margin:0}
+a{color:inherit}
+.wrap{max-width:680px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-weight:700;text-decoration:none;color:var(--org)}
+nav{display:flex;gap:18px;font-size:14px}
+nav a{text-decoration:none;color:var(--mute)}
+.hero{background:linear-gradient(rgba(30,15,0,.5),rgba(30,15,0,.62)),url("images/hero.jpg") center 62%/cover #4a2a08;color:#fff;overflow:hidden}
+.hero .wrap{padding-top:96px;padding-bottom:104px}
+.hero small{display:block;font-size:14px;letter-spacing:.14em;opacity:.85;margin-bottom:12px}
+.hero h1{font-size:clamp(40px,12vw,64px);font-weight:700;letter-spacing:-.02em}
+.hero p{margin:16px 0 28px;font-size:18px;opacity:.95}
+.hero svg{display:block;width:100%;max-width:520px;margin:12px auto 0}
+.btn{display:inline-block;background:var(--org);color:var(--ink);border-radius:12px;padding:15px 28px;font:500 16px/1 "Noto Sans KR",sans-serif;text-decoration:none}
+.hero .btn{background:#fff;color:#8a4606}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--org);outline-offset:3px}
+.stats{background:var(--soft)}
+.stats .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding-top:28px;padding-bottom:28px;text-align:center}
+.stats b{display:block;font-size:clamp(22px,6vw,32px);font-weight:700;color:var(--org);line-height:1.2}
+.stats span{font-size:13px;color:var(--mute)}
+section{padding:56px 0;border-top:1px solid var(--line)}
+section.first{border-top:0}
+h2{font-size:24px;margin-bottom:8px}
+.sub{color:var(--mute);margin:0 0 28px}
+.two{display:grid;gap:14px}
+@media(min-width:560px){.two{grid-template-columns:1fr 1fr}}
+.card{background:var(--soft);border-radius:16px;padding:24px}
+.card img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px;display:block;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.grid img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;display:block}
+.card svg.x{width:64px;height:64px;display:block;margin-bottom:12px}
+.card h3{font-size:20px}
+.card .tag{color:var(--org);font-size:14px;display:block;margin:2px 0 10px}
+.card p{margin:0;color:var(--mute);font-size:15px}
+.scale{position:relative;height:6px;border-radius:3px;background:linear-gradient(90deg,#f6d9a8,var(--org));margin:30px 0 8px}
+.scale i{position:absolute;top:-5px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--org);transform:translateX(-50%)}
+.axis{display:flex;justify-content:space-between;font-size:13px;color:var(--mute)}
+.steps{list-style:none;margin:0;padding:0;position:relative}
+.steps::before{content:"";position:absolute;left:15px;top:8px;bottom:8px;width:1px;background:var(--line)}
+.steps li{position:relative;padding:0 0 28px 52px}
+.steps li:last-child{padding-bottom:0}
+.steps em{position:absolute;left:0;top:0;width:31px;height:31px;border-radius:50%;background:var(--org);color:var(--ink);font:500 14px/31px "Noto Sans KR",sans-serif;text-align:center;font-style:normal}
+.steps b{display:block;font-weight:500;font-size:17px}
+.steps span{color:var(--mute);font-size:15px}
+.band{background:var(--hero);color:#fff;border-top:0}
+.band h2{color:#fff}
+.band p{margin:0 0 24px;opacity:.92}
+.band .btn{background:#fff;color:#8a4606}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font-weight:400;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--mute)}
+details[open] summary::after{content:"−"}
+details p{margin:10px 0 0;color:var(--mute);font-size:15px}
+.muted{color:var(--mute)}
+footer{border-top:1px solid var(--line);padding:32px 0;font-size:14px;color:var(--mute)}
+footer p{margin:4px 0}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--bg);border-top:1px solid var(--line);padding:12px 24px calc(12px + env(safe-area-inset-bottom,0px))}
+.bar .btn{display:block;text-align:center;max-width:632px;margin:0 auto}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<radialGradient id="g" cx=".38" cy=".3" r=".8"><stop offset="0" stop-color="#ffc766"/><stop offset=".6" stop-color="#f59a22"/><stop offset="1" stop-color="#e57a0c"/></radialGradient>
+<symbol id="hb" viewBox="0 0 100 100"><path d="M40 20c0-8 20-8 20 0l3 9H37z" fill="url(#g)"/><circle cx="50" cy="60" r="34" fill="url(#g)"/><ellipse cx="38" cy="46" rx="9" ry="5" fill="#fff" opacity=".3" transform="rotate(-30 38 46)"/><path d="M50 22c8-10 20-8 22-6-4 8-14 10-22 6z" fill="#7d9340"/></symbol>
+<symbol id="kr" viewBox="0 0 100 100"><circle cx="50" cy="56" r="30" fill="url(#g)"/><ellipse cx="40" cy="44" rx="8" ry="4.5" fill="#fff" opacity=".3" transform="rotate(-30 40 44)"/><path d="M50 27c6-10 18-9 21-7-3 8-13 11-21 7z" fill="#7d9340"/></symbol>
+</defs></svg>
+
+<header><div class="wrap"><a class="logo" href="#top">하원그로브</a>
+<nav><a href="#fruits">귤</a><a href="#story">농장</a><a href="#gallery">사진</a><a href="#order">주문</a><a href="#faq">Q&amp;A</a></nav></div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<small>HAWON GROVE · JEJU CITRUS</small>
+<h1>하원그로브</h1>
+<p>제주 서귀포 하원동, 한라산 자락에서 키운<br>한라봉과 카라향</p>
+<a class="btn" href="#order">주문 안내</a>
+</div></div>
+
+<div class="stats"><div class="wrap">
+<div><b>240m</b><span>해발 고도</span></div>
+<div><b>13+</b><span>수확 당도 브릭스</span></div>
+<div><b>5일</b><span>수확 후 출하</span></div>
+</div></div>
+
+<div class="wrap">
+<section id="fruits" class="first">
+<h2>두 가지 귤</h2>
+<p class="sub">맛의 결이 다릅니다.</p>
+<div class="two">
+<div class="card"><img src="images/hallabong.jpg" alt="수확한 한라봉을 든 손" loading="lazy"><h3>한라봉</h3><span class="tag">새콤 · 산뜻</span><p>새콤달콤한 맛과 껍질을 벗길 때 퍼지는 향이 매력입니다. 후숙하면 신맛이 부드러워지고 단맛이 깊어집니다.</p></div>
+<div class="card"><img src="images/kara.jpg" alt="나무 앞에서 카라향을 든 손" loading="lazy"><h3>카라향</h3><span class="tag">달콤 · 부드러움</span><p>달고 부드러운 맛의 귤입니다.</p></div>
+</div>
+<div class="scale" role="img" aria-label="한라봉은 새콤한 쪽, 카라향은 달고 부드러운 쪽"><i style="left:14%"></i><i style="left:84%"></i></div>
+<div class="axis"><span>한라봉</span><span>카라향</span></div>
+</section>
+
+<section id="story">
+<h2>농장 이야기</h2>
+<p class="sub">제주 서귀포 하원동, 한라산 자락 해발 240m의 완만한 언덕에 있습니다.</p>
+<p style="margin:0 0 14px">풍부한 지하수 위에 있으면서도 물 빠짐이 좋은 지형이고, 기후가 비교적 서늘합니다. 그래서 한라봉이 물러지지 않고 단단하게 자랍니다.</p>
+<p style="margin:0">식물생리학의 원리를 바탕으로, 한라봉이 가진 당과 산의 균형을 가장 중요하게 생각하며 청정한 환경에서 재배합니다.</p>
+</section>
+
+<section id="gallery">
+<h2>농장 사진</h2>
+<p class="sub">하원동 하우스에서 직접 찍은 사진입니다.</p>
+<div class="grid"><img src="images/g1.jpg" alt="황마 바구니에 담긴 한라봉" loading="lazy"><img src="images/g2.jpg" alt="수확 바구니에 담긴 한라봉" loading="lazy"><img src="images/g3.jpg" alt="위에서 본 한라봉 수확 바구니" loading="lazy"><img src="images/g4.jpg" alt="나무에 달린 카라향" loading="lazy"><img src="images/g5.jpg" alt="카라향 나무" loading="lazy"><img src="images/g6.jpg" alt="가지에 달린 카라향" loading="lazy"></div>
+</section>
+
+<section>
+<h2>수확부터 식탁까지</h2>
+<p class="sub">잘 익은 때에 거두고, 가장 맛있는 때에 드시도록 보냅니다.</p>
+<ol class="steps">
+<li><em>1</em><b>수확</b><span>당도 13브릭스 이상, 산도 약 1%로 부드러워졌을 때 거둡니다. 한 번에 몰아서 하지 않고 여러 차례 나누어 수확합니다.</span></li>
+<li><em>2</em><b>출하</b><span>수확 후 5일 이내에 보냅니다. 주문 수량에 맞춰 수확량을 조절합니다.</span></li>
+<li><em>3</em><b>후숙</b><span>받으신 뒤 햇볕이 들지 않는 서늘한 곳에 2~4일 두세요.</span></li>
+<li><em>4</em><b>맛있게 드시기</b><span>손으로 살짝 눌렀을 때 단단함이 풀리고 말랑해지면 드시기 좋습니다.</span></li>
+</ol>
+</section>
+</div>
+
+<section id="order" class="band"><div class="wrap">
+<h2>주문</h2>
+<p id="olead">온라인 주문은 준비 중입니다.<br>지금은 인스타그램 DM으로 주문과 문의를 받습니다.</p>
+<a class="btn" id="obtn2" href="https://www.instagram.com/hawongrove/" rel="noopener" target="_blank">인스타그램으로 문의하기</a>
+</div></section>
+
+<div class="wrap">
+<section id="faq" class="first">
+<h2>자주 묻는 질문</h2>
+<p class="sub">받으신 뒤 보관과 손질에 대한 안내입니다.</p>
+<details><summary>껍질에 주름이 생겼어요</summary><p>후숙 중에 껍질의 수분이 증발하면서 주름이 약간 생길 수 있습니다. 자연스러운 현상입니다.</p></details>
+<details><summary>어떻게 보관하나요?</summary><p>일주일 이내는 햇볕이 들지 않는 서늘한 곳에 두세요. 일주일 이상은 냉장 보관을 권장합니다. 박스에 보관할 때는 비닐을 벗기지 않고 덮어 두면 수분이 빠져나가는 것을 막는 데 도움이 됩니다.</p></details>
+<details><summary>먹기 전에 씻어야 하나요?</summary><p>드시기 전에 흐르는 물에 씻은 뒤 물기를 닦아 주세요.</p></details>
+<details><summary>껍질은 어떻게 쓰나요?</summary><p>물과 계피를 넣고 냄비에 끓이면 환기와 탈취에 도움이 됩니다. 현관이나 신발장에 2~3일 두면 은은한 향을 느끼실 수 있습니다.</p></details>
+</section>
+
+<section>
+<h2>팜지오</h2>
+<p class="muted" style="margin:0">하원그로브는 제주 감귤농장 팜지오(farmgio)가 운영하는 브랜드입니다.</p>
+</section>
+</div>
+</main>
+
+<footer><div class="wrap">
+<p>팜지오 (farmgio) · 제주 서귀포시 하원동</p>
+<p>인스타그램 <a href="https://www.instagram.com/hawongrove/" rel="noopener" target="_blank">@hawongrove</a></p>
+</div></footer>
+
+<div class="bar"><a class="btn" id="obtn" href="#order">주문하기</a></div>
+
+<script>
+// 스마트스토어를 열면 아래 주소를 채워 주세요. 주문 버튼이 스토어로 연결됩니다.
+var STORE_URL="";
+if(STORE_URL){["obtn","obtn2"].forEach(function(i){var b=document.getElementById(i);b.href=STORE_URL;b.target="_blank";b.rel="noopener";b.textContent="스마트스토어에서 주문하기"});
+document.getElementById("olead").textContent="한라봉과 카라향을 스마트스토어에서 주문하실 수 있습니다."}
+</script>
+</body>
+</html>
